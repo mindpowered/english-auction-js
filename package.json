@@ -2,7 +2,7 @@
     "private": true,
     "license": "CPAL-1.0",
     "name": "@mindpowered/englishauction",
-    "version": "0.0.6",
+    "version": "0.0.9",
     "description": "EnglishAuction",
     "main": "index.js",
     "dependencies": {
