@@ -151,387 +151,7 @@ Also supports reserve price and automatic bidding.</div>
     
 
     
-    <h4 class="name" id="AutoBid"><span class="type-signature"></span>AutoBid<span class="signature">(auctionId, userId, price)</span><span class="type-signature"> &rarr; {bool}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Automatically bid against others in an auction (up to the specified amount)
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>auctionId</code></td>
-            
-
-            <td class="type">
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">auction id to bid in</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>userId</code></td>
-            
-
-            <td class="type">
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">user id that's bidding</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>price</code></td>
-            
-
-            <td class="type">
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">bid price</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="EnglishAuction.js.html">EnglishAuction.js</a>, <a href="EnglishAuction.js.html#line57">line 57</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    true on success, false on failure
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">bool</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="Bid"><span class="type-signature"></span>Bid<span class="signature">(auctionId, userId, price)</span><span class="type-signature"> &rarr; {bool}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Bid in an auction
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>auctionId</code></td>
-            
-
-            <td class="type">
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">auction id to bid in</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>userId</code></td>
-            
-
-            <td class="type">
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">user id that's bidding</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>price</code></td>
-            
-
-            <td class="type">
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">bid price</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="EnglishAuction.js.html">EnglishAuction.js</a>, <a href="EnglishAuction.js.html#line43">line 43</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    true on success, false on failure
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">bool</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="Create"><span class="type-signature"></span>Create<span class="signature">(start, end, startingPrice, reservePrice)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    <h4 class="name" id="Create"><span class="type-signature"></span>Create<span class="signature">(start, end, startingPrice, reservePrice, priceIncrement)</span><span class="type-signature"> &rarr; {string}</span></h4>
     
 
     
@@ -644,6 +264,24 @@ Also supports reserve price and automatic bidding.</div>
         </tr>
 
     
+
+        <tr>
+            
+                <td class="name"><code>priceIncrement</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">price increments for bids in the auction</td>
+        </tr>
+
+    
     </tbody>
 </table>
 
@@ -681,7 +319,7 @@ Also supports reserve price and automatic bidding.</div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="EnglishAuction.js.html">EnglishAuction.js</a>, <a href="EnglishAuction.js.html#line29">line 29</a>
+        <a href="EnglishAuction.js.html">EnglishAuction.js</a>, <a href="EnglishAuction.js.html#line30">line 30</a>
     </li></ul></dd>
     
 
@@ -739,7 +377,7 @@ Also supports reserve price and automatic bidding.</div>
     
 
     
-    <h4 class="name" id="ForceClose"><span class="type-signature"></span>ForceClose<span class="signature">(auctionId, userId, price)</span><span class="type-signature"> &rarr; {bool}</span></h4>
+    <h4 class="name" id="GetEnd"><span class="type-signature"></span>GetEnd<span class="signature">(auctionId)</span><span class="type-signature"> &rarr; {number}</span></h4>
     
 
     
@@ -747,7 +385,7 @@ Also supports reserve price and automatic bidding.</div>
 
 
 <div class="description">
-    Force an auction to close and specify the winning bid.
+    Check if auction has ended
 </div>
 
 
@@ -794,43 +432,7 @@ Also supports reserve price and automatic bidding.</div>
 
             
 
-            <td class="description last">auction id to bid in</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>userId</code></td>
-            
-
-            <td class="type">
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">user id that's bidding</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>price</code></td>
-            
-
-            <td class="type">
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">bid price</td>
+            <td class="description last">auction id</td>
         </tr>
 
     
@@ -871,7 +473,7 @@ Also supports reserve price and automatic bidding.</div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="EnglishAuction.js.html">EnglishAuction.js</a>, <a href="EnglishAuction.js.html#line71">line 71</a>
+        <a href="EnglishAuction.js.html">EnglishAuction.js</a>, <a href="EnglishAuction.js.html#line55">line 55</a>
     </li></ul></dd>
     
 
@@ -900,7 +502,7 @@ Also supports reserve price and automatic bidding.</div>
 
         
 <div class="param-desc">
-    true on success, false on failure
+    true if auction has ended, false otherwise
 </div>
 
 
@@ -911,7 +513,7 @@ Also supports reserve price and automatic bidding.</div>
     </dt>
     <dd>
         
-<span class="param-type">bool</span>
+<span class="param-type">number</span>
 
 
     </dd>
@@ -929,7 +531,7 @@ Also supports reserve price and automatic bidding.</div>
     
 
     
-    <h4 class="name" id="Status"><span class="type-signature"></span>Status<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="GetStart"><span class="type-signature"></span>GetStart<span class="signature">(auctionId)</span><span class="type-signature"> &rarr; {number}</span></h4>
     
 
     
@@ -937,7 +539,8 @@ Also supports reserve price and automatic bidding.</div>
 
 
 <div class="description">
-    TBD
+    Get the start of an auction
+Will return a timestamp in milliseconds
 </div>
 
 
@@ -946,6 +549,50 @@ Also supports reserve price and automatic bidding.</div>
 
 
 
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>auctionId</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">auction id</td>
+        </tr>
+
+    
+    </tbody>
+</table>
 
 
 
@@ -981,7 +628,7 @@ Also supports reserve price and automatic bidding.</div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="EnglishAuction.js.html">EnglishAuction.js</a>, <a href="EnglishAuction.js.html#line81">line 81</a>
+        <a href="EnglishAuction.js.html">EnglishAuction.js</a>, <a href="EnglishAuction.js.html#line43">line 43</a>
     </li></ul></dd>
     
 
@@ -1006,6 +653,182 @@ Also supports reserve price and automatic bidding.</div>
 
 
 
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    start of auction
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">number</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="HasStarted"><span class="type-signature"></span>HasStarted<span class="signature">(auctionId)</span><span class="type-signature"> &rarr; {number}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Check if an auction has started yet
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>auctionId</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">auction id</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="EnglishAuction.js.html">EnglishAuction.js</a>, <a href="EnglishAuction.js.html#line67">line 67</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    true if auction started, false otherwise
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">number</span>
+
+
+    </dd>
+</dl>
+
+    
 
 
 
@@ -1033,7 +856,7 @@ Also supports reserve price and automatic bidding.</div>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.5</a> on Fri Oct 02 2020 23:09:24 GMT+0000 (Coordinated Universal Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.5</a> on Sat Oct 10 2020 17:46:22 GMT+0000 (Coordinated Universal Time)
 </footer>
 
 <script> prettyPrint(); </script>
