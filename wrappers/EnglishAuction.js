@@ -120,5 +120,17 @@ class EnglishAuctionWrapper {
 		return ret;
 	}
 
+	/**
+	 * Get the price increment for the specified auction
+	 * @param auctionId auction id
+	 * @return {number} Price increment
+	*/
+	GetPriceIncrement(auctionId) {
+		let bus = maglev.maglev.MagLev.getInstance('default');
+		let args = [auctionId];
+		let ret = bus.call('EnglishAuction.GetPriceIncrement', args);
+		return ret;
+	}
+
 }
 
