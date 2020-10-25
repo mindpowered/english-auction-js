@@ -132,5 +132,54 @@ class EnglishAuctionWrapper {
 		return ret;
 	}
 
+	/**
+	 * Get the reserve price for the specified auction
+	 * @param auctionId auction id
+	 * @return {number} Reserve price
+	*/
+	GetReservePrice(auctionId) {
+		let bus = maglev.maglev.MagLev.getInstance('default');
+		let args = [auctionId];
+		let ret = bus.call('EnglishAuction.GetReservePrice', args);
+		return ret;
+	}
+
+	/**
+	 * Get the starting price for the specified auction
+	 * @param auctionId auction id
+	 * @return {number} Starting price
+	*/
+	GetStartingPrice(auctionId) {
+		let bus = maglev.maglev.MagLev.getInstance('default');
+		let args = [auctionId];
+		let ret = bus.call('EnglishAuction.GetStartingPrice', args);
+		return ret;
+	}
+
+	/**
+	 * Get the time remaining for the specified auction
+	 * @param auctionId auction id
+	 * @param now current unix timestamp
+	 * @return {number} Time remaining in seconds
+	*/
+	CalcTimeRemaining(auctionId, now) {
+		let bus = maglev.maglev.MagLev.getInstance('default');
+		let args = [auctionId, now];
+		let ret = bus.call('EnglishAuction.CalcTimeRemaining', args);
+		return ret;
+	}
+
+	/**
+	 * Get the minimum next bid for the specified auction
+	 * @param auctionId auction id
+	 * @return {number} Minimum bid price
+	*/
+	CalcMinimumBid(auctionId) {
+		let bus = maglev.maglev.MagLev.getInstance('default');
+		let args = [auctionId];
+		let ret = bus.call('EnglishAuction.CalcMinimumBid', args);
+		return ret;
+	}
+
 }
 
