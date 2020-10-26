@@ -181,5 +181,22 @@ class EnglishAuctionWrapper {
 		return ret;
 	}
 
+	/**
+	 * Get a list of auctions based on their end time
+	 * @param endfrom end from
+	 * @param endto end to
+	 * @param page 
+	 * @param perpage number of auctions per page
+	 * @param sort field to sort by
+	 * @param asc ascending (true) or descending (false)
+	 * @return {array} List of auctions ending in the specified period
+	*/
+	GetAuctionsEnding(endfrom, endto, page, perpage, sort, asc) {
+		let bus = maglev.maglev.MagLev.getInstance('default');
+		let args = [endfrom, endto, page, perpage, sort, asc];
+		let ret = bus.call('EnglishAuction.GetAuctionsEnding', args);
+		return ret;
+	}
+
 }
 
