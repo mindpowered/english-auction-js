@@ -198,5 +198,37 @@ class EnglishAuctionWrapper {
 		return ret;
 	}
 
+	/**
+	 * Get a list of auctions based on their start time
+	 * @param startfrom start from
+	 * @param startto start to
+	 * @param page 
+	 * @param perpage number of auctions per page
+	 * @param sort field to sort by
+	 * @param asc ascending (true) or descending (false)
+	 * @return {array} List of auctions starting in the specified period
+	*/
+	GetAuctionsStarting(startfrom, startto, page, perpage, sort, asc) {
+		let bus = maglev.maglev.MagLev.getInstance('default');
+		let args = [startfrom, startto, page, perpage, sort, asc];
+		let ret = bus.call('EnglishAuction.GetAuctionsStarting', args);
+		return ret;
+	}
+
+	/**
+	 * Get a list of currently running auctions
+	 * @param page 
+	 * @param perpage number of auctions per page
+	 * @param sort field to sort by
+	 * @param asc ascending (true) or descending (false)
+	 * @return {array} List of open auctions
+	*/
+	GetOpenAuctions(page, perpage, sort, asc) {
+		let bus = maglev.maglev.MagLev.getInstance('default');
+		let args = [page, perpage, sort, asc];
+		let ret = bus.call('EnglishAuction.GetOpenAuctions', args);
+		return ret;
+	}
+
 }
 
