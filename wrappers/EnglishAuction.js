@@ -14,7 +14,7 @@ const englishauction = require('@mindpowered/englishauction');
  */
 class EnglishAuctionWrapper {
 	constructor() {
-		let bus = maglev.maglev.MagLev.getInstance('default');
+		let bus = maglev.maglev.MagLev.getInstance('englishauction');
 		let lib = new englishauction.englishauction.EnglishAuction(bus);
 	}
 
@@ -28,9 +28,9 @@ class EnglishAuctionWrapper {
 	 * @return {string} auctionId
 	*/
 	Create(start, end, startingPrice, reservePrice, priceIncrement) {
-		let bus = maglev.maglev.MagLev.getInstance('default');
+		let jsbus = maglev.maglev.MagLevJs.getInstance('englishauction');
 		let args = [start, end, startingPrice, reservePrice, priceIncrement];
-		let ret = bus.call('EnglishAuction.Create', args);
+		let ret = jsbus.call('EnglishAuction.Create', args);
 		return ret;
 	}
 
@@ -41,9 +41,9 @@ class EnglishAuctionWrapper {
 	 * @return {number} start of auction
 	*/
 	GetStart(auctionId) {
-		let bus = maglev.maglev.MagLev.getInstance('default');
+		let jsbus = maglev.maglev.MagLevJs.getInstance('englishauction');
 		let args = [auctionId];
-		let ret = bus.call('EnglishAuction.GetStart', args);
+		let ret = jsbus.call('EnglishAuction.GetStart', args);
 		return ret;
 	}
 
@@ -53,9 +53,9 @@ class EnglishAuctionWrapper {
 	 * @return {bool} true if auction has ended, false otherwise
 	*/
 	GetEnd(auctionId) {
-		let bus = maglev.maglev.MagLev.getInstance('default');
+		let jsbus = maglev.maglev.MagLevJs.getInstance('englishauction');
 		let args = [auctionId];
-		let ret = bus.call('EnglishAuction.GetEnd', args);
+		let ret = jsbus.call('EnglishAuction.GetEnd', args);
 		return ret;
 	}
 
@@ -65,9 +65,9 @@ class EnglishAuctionWrapper {
 	 * @return {bool} true if auction started, false otherwise
 	*/
 	HasStarted(auctionId) {
-		let bus = maglev.maglev.MagLev.getInstance('default');
+		let jsbus = maglev.maglev.MagLevJs.getInstance('englishauction');
 		let args = [auctionId];
-		let ret = bus.call('EnglishAuction.HasStarted', args);
+		let ret = jsbus.call('EnglishAuction.HasStarted', args);
 		return ret;
 	}
 
@@ -78,9 +78,9 @@ class EnglishAuctionWrapper {
 	 * @param price price bud
 	*/
 	Bid(auctionId, userId, price) {
-		let bus = maglev.maglev.MagLev.getInstance('default');
+		let jsbus = maglev.maglev.MagLevJs.getInstance('englishauction');
 		let args = [auctionId, userId, price];
-		bus.call('EnglishAuction.Bid', args);
+		jsbus.call('EnglishAuction.Bid', args);
 	}
 
 	/**
@@ -89,9 +89,9 @@ class EnglishAuctionWrapper {
 	 * @return {mixed} 
 	*/
 	GetHighestBidder(auctionId) {
-		let bus = maglev.maglev.MagLev.getInstance('default');
+		let jsbus = maglev.maglev.MagLevJs.getInstance('englishauction');
 		let args = [auctionId];
-		let ret = bus.call('EnglishAuction.GetHighestBidder', args);
+		let ret = jsbus.call('EnglishAuction.GetHighestBidder', args);
 		return ret;
 	}
 
@@ -102,9 +102,9 @@ class EnglishAuctionWrapper {
 	 * @return {array} Highest bids for the specified auction
 	*/
 	GetHighestBids(auctionId, numBids) {
-		let bus = maglev.maglev.MagLev.getInstance('default');
+		let jsbus = maglev.maglev.MagLevJs.getInstance('englishauction');
 		let args = [auctionId, numBids];
-		let ret = bus.call('EnglishAuction.GetHighestBids', args);
+		let ret = jsbus.call('EnglishAuction.GetHighestBids', args);
 		return ret;
 	}
 
@@ -114,9 +114,9 @@ class EnglishAuctionWrapper {
 	 * @return {number} Number of bids placed in the specified auction
 	*/
 	GetNumberOfBids(auctionId) {
-		let bus = maglev.maglev.MagLev.getInstance('default');
+		let jsbus = maglev.maglev.MagLevJs.getInstance('englishauction');
 		let args = [auctionId];
-		let ret = bus.call('EnglishAuction.GetNumberOfBids', args);
+		let ret = jsbus.call('EnglishAuction.GetNumberOfBids', args);
 		return ret;
 	}
 
@@ -126,9 +126,9 @@ class EnglishAuctionWrapper {
 	 * @return {number} Price increment
 	*/
 	GetPriceIncrement(auctionId) {
-		let bus = maglev.maglev.MagLev.getInstance('default');
+		let jsbus = maglev.maglev.MagLevJs.getInstance('englishauction');
 		let args = [auctionId];
-		let ret = bus.call('EnglishAuction.GetPriceIncrement', args);
+		let ret = jsbus.call('EnglishAuction.GetPriceIncrement', args);
 		return ret;
 	}
 
@@ -138,9 +138,9 @@ class EnglishAuctionWrapper {
 	 * @return {number} Reserve price
 	*/
 	GetReservePrice(auctionId) {
-		let bus = maglev.maglev.MagLev.getInstance('default');
+		let jsbus = maglev.maglev.MagLevJs.getInstance('englishauction');
 		let args = [auctionId];
-		let ret = bus.call('EnglishAuction.GetReservePrice', args);
+		let ret = jsbus.call('EnglishAuction.GetReservePrice', args);
 		return ret;
 	}
 
@@ -150,9 +150,9 @@ class EnglishAuctionWrapper {
 	 * @return {number} Starting price
 	*/
 	GetStartingPrice(auctionId) {
-		let bus = maglev.maglev.MagLev.getInstance('default');
+		let jsbus = maglev.maglev.MagLevJs.getInstance('englishauction');
 		let args = [auctionId];
-		let ret = bus.call('EnglishAuction.GetStartingPrice', args);
+		let ret = jsbus.call('EnglishAuction.GetStartingPrice', args);
 		return ret;
 	}
 
@@ -163,9 +163,9 @@ class EnglishAuctionWrapper {
 	 * @return {number} Time remaining in seconds
 	*/
 	CalcTimeRemaining(auctionId, now) {
-		let bus = maglev.maglev.MagLev.getInstance('default');
+		let jsbus = maglev.maglev.MagLevJs.getInstance('englishauction');
 		let args = [auctionId, now];
-		let ret = bus.call('EnglishAuction.CalcTimeRemaining', args);
+		let ret = jsbus.call('EnglishAuction.CalcTimeRemaining', args);
 		return ret;
 	}
 
@@ -175,9 +175,9 @@ class EnglishAuctionWrapper {
 	 * @return {number} Minimum bid price
 	*/
 	CalcMinimumBid(auctionId) {
-		let bus = maglev.maglev.MagLev.getInstance('default');
+		let jsbus = maglev.maglev.MagLevJs.getInstance('englishauction');
 		let args = [auctionId];
-		let ret = bus.call('EnglishAuction.CalcMinimumBid', args);
+		let ret = jsbus.call('EnglishAuction.CalcMinimumBid', args);
 		return ret;
 	}
 
@@ -192,9 +192,9 @@ class EnglishAuctionWrapper {
 	 * @return {array} List of auctions ending in the specified period
 	*/
 	GetAuctionsEnding(endfrom, endto, page, perpage, sort, asc) {
-		let bus = maglev.maglev.MagLev.getInstance('default');
+		let jsbus = maglev.maglev.MagLevJs.getInstance('englishauction');
 		let args = [endfrom, endto, page, perpage, sort, asc];
-		let ret = bus.call('EnglishAuction.GetAuctionsEnding', args);
+		let ret = jsbus.call('EnglishAuction.GetAuctionsEnding', args);
 		return ret;
 	}
 
@@ -209,9 +209,9 @@ class EnglishAuctionWrapper {
 	 * @return {array} List of auctions starting in the specified period
 	*/
 	GetAuctionsStarting(startfrom, startto, page, perpage, sort, asc) {
-		let bus = maglev.maglev.MagLev.getInstance('default');
+		let jsbus = maglev.maglev.MagLevJs.getInstance('englishauction');
 		let args = [startfrom, startto, page, perpage, sort, asc];
-		let ret = bus.call('EnglishAuction.GetAuctionsStarting', args);
+		let ret = jsbus.call('EnglishAuction.GetAuctionsStarting', args);
 		return ret;
 	}
 
@@ -224,9 +224,9 @@ class EnglishAuctionWrapper {
 	 * @return {array} List of open auctions
 	*/
 	GetOpenAuctions(page, perpage, sort, asc) {
-		let bus = maglev.maglev.MagLev.getInstance('default');
+		let jsbus = maglev.maglev.MagLevJs.getInstance('englishauction');
 		let args = [page, perpage, sort, asc];
-		let ret = bus.call('EnglishAuction.GetOpenAuctions', args);
+		let ret = jsbus.call('EnglishAuction.GetOpenAuctions', args);
 		return ret;
 	}
 
