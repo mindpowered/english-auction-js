@@ -6,16 +6,18 @@
 
 const maglev = require('@mindpowered/maglev');
 const englishauction = require('@mindpowered/englishauction');
+const persistence = require('@mindpowered/persistence');
 
 /**
  * An Auction Library
  * Timed auction starting at a low price and increasing until no more bids are made.
  * Also supports reserve price and automatic bidding.
  */
-class EnglishAuctionWrapper {
+class EnglishAuction {
 	constructor() {
 		let bus = maglev.maglev.MagLev.getInstance('englishauction');
 		let lib = new englishauction.englishauction.EnglishAuction(bus);
+		new persistence.persistence.Persistence(bus);
 	}
 
 	/**
