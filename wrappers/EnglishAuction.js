@@ -232,5 +232,67 @@ class EnglishAuction {
 		return ret;
 	}
 
+	/**
+	 * Set up a method to create a new auction
+	 * @param recordType 
+	 * @param operationName 
+	 * @param strategyMethod 
+	*/
+	SetupCreateNewAuction(strategyMethod) {
+		let jsbus = maglev.maglev.MagLevJs.getInstance('englishauction');
+		recordType = "EnglishAuction.Auction"
+		operationName = "CreateNew"
+		let args = [recordType, operationName, strategyMethod];
+		jsbus.call('Persistence.AddMutator', args);
+	}
+
+	/**
+	 * Set up a query method to find auctions by id
+	 * @param recordType 
+	 * @param operationName 
+	 * @param strategyMethod 
+	 * @return {object} The auction or null
+	*/
+	SetupFindAuctionById(strategyMethod) {
+		let jsbus = maglev.maglev.MagLevJs.getInstance('englishauction');
+		recordType = "EnglishAuction.Auction"
+		operationName = "FindById"
+		let args = [recordType, operationName, strategyMethod];
+		let ret = jsbus.call('Persistence.AddGetter', args);
+		return ret;
+	}
+
+	/**
+	 * Set up a query method to find auctions by their start time
+	 * @param recordType 
+	 * @param operationName 
+	 * @param strategyMethod 
+	 * @return {array} A list of auctions
+	*/
+	SetupFindAuctionStarting(strategyMethod) {
+		let jsbus = maglev.maglev.MagLevJs.getInstance('englishauction');
+		recordType = "EnglishAuction.Auction"
+		operationName = "FindStarting"
+		let args = [recordType, operationName, strategyMethod];
+		let ret = jsbus.call('Persistence.AddGetter', args);
+		return ret;
+	}
+
+	/**
+	 * Set up a query method to find auctions by their end time
+	 * @param recordType 
+	 * @param operationName 
+	 * @param strategyMethod 
+	 * @return {array} A list of auctions
+	*/
+	SetupFindAuctionEnd(strategyMethod) {
+		let jsbus = maglev.maglev.MagLevJs.getInstance('englishauction');
+		recordType = "EnglishAuction.Auction"
+		operationName = "FindEnding"
+		let args = [recordType, operationName, strategyMethod];
+		let ret = jsbus.call('Persistence.AddGetter', args);
+		return ret;
+	}
+
 }
 
