@@ -233,27 +233,29 @@ class EnglishAuction {
 	}
 
 	/**
-	 * Set up a method to create a new auction
+	 * Provide a callback used to store new auctions (eg. in a database) and return the ID of the new auction.
 	 * @param recordType 
 	 * @param operationName 
 	 * @param strategyMethod 
+	 * @return {string} new auction id
 	*/
-	SetupCreateNewAuction(strategyMethod) {
+	SetupNewAuctionQueryCallback(strategyMethod) {
 		let jsbus = maglev.maglev.MagLevJs.getInstance('englishauction');
 		recordType = "EnglishAuction.Auction"
 		operationName = "CreateNew"
 		let args = [recordType, operationName, strategyMethod];
-		jsbus.call('Persistence.AddMutator', args);
+		let ret = jsbus.call('Persistence.AddMutator', args);
+		return ret;
 	}
 
 	/**
-	 * Set up a query method to find auctions by id
+	 * Provide a callback used to retrieve auctions (eg. from a database) by ID
 	 * @param recordType 
 	 * @param operationName 
 	 * @param strategyMethod 
 	 * @return {object} The auction or null
 	*/
-	SetupFindAuctionById(strategyMethod) {
+	SetupFindAuctionByIdQueryCallback(strategyMethod) {
 		let jsbus = maglev.maglev.MagLevJs.getInstance('englishauction');
 		recordType = "EnglishAuction.Auction"
 		operationName = "FindById"
@@ -263,13 +265,13 @@ class EnglishAuction {
 	}
 
 	/**
-	 * Set up a query method to find auctions by their start time
+	 * Provide a callback used to retrieve auctions (eg. from a database) by their start date/time
 	 * @param recordType 
 	 * @param operationName 
 	 * @param strategyMethod 
 	 * @return {array} A list of auctions
 	*/
-	SetupFindAuctionStarting(strategyMethod) {
+	SetupFindAuctionsStartingQueryCallback(strategyMethod) {
 		let jsbus = maglev.maglev.MagLevJs.getInstance('englishauction');
 		recordType = "EnglishAuction.Auction"
 		operationName = "FindStarting"
@@ -279,16 +281,80 @@ class EnglishAuction {
 	}
 
 	/**
-	 * Set up a query method to find auctions by their end time
+	 * Provide a callback used to retrieve auctions (eg. from a database) by their end data/time
 	 * @param recordType 
 	 * @param operationName 
 	 * @param strategyMethod 
 	 * @return {array} A list of auctions
 	*/
-	SetupFindAuctionEnd(strategyMethod) {
+	SetupFindAuctionsEndingQueryCallback(strategyMethod) {
 		let jsbus = maglev.maglev.MagLevJs.getInstance('englishauction');
 		recordType = "EnglishAuction.Auction"
 		operationName = "FindEnding"
+		let args = [recordType, operationName, strategyMethod];
+		let ret = jsbus.call('Persistence.AddGetter', args);
+		return ret;
+	}
+
+	/**
+	 * Provide a callback used to retrieve open auctions (eg. from a database)
+	 * @param recordType 
+	 * @param operationName 
+	 * @param strategyMethod 
+	 * @return {array} A list of auctions
+	*/
+	SetupFindOpenAuctionsQueryCallback(strategyMethod) {
+		let jsbus = maglev.maglev.MagLevJs.getInstance('englishauction');
+		recordType = "EnglishAuction.Auction"
+		operationName = "FindOpen"
+		let args = [recordType, operationName, strategyMethod];
+		let ret = jsbus.call('Persistence.AddGetter', args);
+		return ret;
+	}
+
+	/**
+	 * Provide a callback used to count the number of bids for an auction (eg. in a database)
+	 * @param recordType 
+	 * @param operationName 
+	 * @param strategyMethod 
+	 * @return {number} Number of bids
+	*/
+	SetupCountBidsQueryCallback(strategyMethod) {
+		let jsbus = maglev.maglev.MagLevJs.getInstance('englishauction');
+		recordType = "EnglishAuction.Bid"
+		operationName = "CountForAuction"
+		let args = [recordType, operationName, strategyMethod];
+		let ret = jsbus.call('Persistence.AddGetter', args);
+		return ret;
+	}
+
+	/**
+	 * Provide a callback used to retrieve (eg. from a database) the highest bids for an auction
+	 * @param recordType 
+	 * @param operationName 
+	 * @param strategyMethod 
+	 * @return {number} A list of highest bids
+	*/
+	SetupHighestBidsQueryCallback(strategyMethod) {
+		let jsbus = maglev.maglev.MagLevJs.getInstance('englishauction');
+		recordType = "EnglishAuction.Bid"
+		operationName = "FindByHighestPriceForAuction"
+		let args = [recordType, operationName, strategyMethod];
+		let ret = jsbus.call('Persistence.AddGetter', args);
+		return ret;
+	}
+
+	/**
+	 * Provide a callback used to store new bids (eg. in a database) and return the ID of the new bid.
+	 * @param recordType 
+	 * @param operationName 
+	 * @param strategyMethod 
+	 * @return {string} New bid id
+	*/
+	SetupNewBidQueryCallback(strategyMethod) {
+		let jsbus = maglev.maglev.MagLevJs.getInstance('englishauction');
+		recordType = "EnglishAuction.Bid"
+		operationName = "New"
 		let args = [recordType, operationName, strategyMethod];
 		let ret = jsbus.call('Persistence.AddGetter', args);
 		return ret;
