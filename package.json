@@ -1,7 +1,7 @@
 {
     "license": "CPAL-1.0",
     "name": "@mindpowered/englishauction",
-    "version": "0.0.43",
+    "version": "0.0.44",
     "description": "EnglishAuction",
     "main": "index.js",
     "dependencies": {
