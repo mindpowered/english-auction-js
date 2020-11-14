@@ -333,7 +333,7 @@ class EnglishAuction {
 	 * @param recordType 
 	 * @param operationName 
 	 * @param strategyMethod 
-	 * @return {number} A list of highest bids
+	 * @return {array} A list of highest bids
 	*/
 	SetupHighestBidsQueryCallback(strategyMethod) {
 		let jsbus = maglev.maglev.MagLevJs.getInstance('englishauction');
