@@ -24,11 +24,15 @@ npm
 Third-party dependencies may have additional requirements.
 
 # Installation
-npm install ...
+You can retrieve the englishauction package using npm https://www.npmjs.com/. After initializing your packages.json file in your project’s directory with `npm init`, you can install the englishauction package with
+```
+npm i @mindpowered/englishauction --save
+```
+hint: the `--save` option will add the newly installed dependency in your packages.json file. 
 
 
 # Configuration
-You must configure the storage and retrieval of auctions and bids.
+You must configure the storage and retrieval of auctions and bids. Before we can make use of englishauction's functions, we have to create Callback functions for englishauction to use whenever it needs to use any persistent data regarding auctions and bids. A common way of storing persistent data is using SQL. Each setup function bridges the gap between your auction data and the englishauction package's functionality.
 
 # Usage
 You are using js
