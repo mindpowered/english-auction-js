@@ -64,12 +64,24 @@ class EnglishAuction {
 	/**
 	 * Check if an auction has started yet
 	 * @param auctionId auction id
-	 * @return {bool} true if auction started, false otherwise
+	 * @return {bool} true if auction has started, false otherwise
 	*/
 	HasStarted(auctionId) {
 		let jsbus = maglev.maglev.MagLevJs.getInstance('englishauction');
 		let args = [auctionId];
 		let ret = jsbus.call('EnglishAuction.HasStarted', args);
+		return ret;
+	}
+
+	/**
+	 * Check if an auction has ended yet
+	 * @param auctionId auction id
+	 * @return {bool} true if auction has ended, false otherwise
+	*/
+	HasEnded(auctionId) {
+		let jsbus = maglev.maglev.MagLevJs.getInstance('englishauction');
+		let args = [auctionId];
+		let ret = jsbus.call('EnglishAuction.HasEnded', args);
 		return ret;
 	}
 
