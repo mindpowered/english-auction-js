@@ -1,1 +1,4 @@
-module.exports = require('./lib/englishauction.js');
+module.exports = Object.assign(
+    require('./lib/FILE%'.js'),
+    require('./wrappers/index.js'),
+);

@@ -1,1 +1,1 @@
-import { EnglishAuction } from 'EnglishAuction'
+module.exports.EnglishAuction = require('./EnglishAuction.js');

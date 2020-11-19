@@ -5,7 +5,7 @@
  */
 
 const maglev = require('@mindpowered/maglev');
-const englishauction = require('@mindpowered/englishauction');
+const englishauction = require('../lib/englishauction.js');
 const persistence = require('@mindpowered/persistence');
 
 /**
@@ -373,4 +373,5 @@ class EnglishAuction {
 	}
 
 }
+module.exports = EnglishAuction;
 
