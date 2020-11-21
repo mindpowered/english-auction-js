@@ -1,10 +1,11 @@
 {
     "license": "CPAL-1.0",
     "name": "@mindpowered/englishauction",
-    "version": "0.0.53",
+    "version": "0.0.54",
     "description": "EnglishAuction",
     "main": "index.js",
     "dependencies": {
+        "@mindpowered/persistence": "*",
         "@mindpowered/maglev": "*"
     }
 }
