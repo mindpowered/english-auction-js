@@ -14,7 +14,7 @@ const englishauction = require('../lib/englishauction.js');
  */
 class EnglishAuction {
 	constructor() {
-		let bus = maglev.maglev.MagLev.getInstance('englishauction');
+		let bus = maglev.maglev.MagLev.getInstance('default');
 		let lib = new englishauction.englishauction.EnglishAuction(bus);
 	}
 
@@ -28,7 +28,7 @@ class EnglishAuction {
 	 * @return {Promise} auctionId Promise will resolve to type string.
 	*/
 	Create(start, end, startingPrice, reservePrice, priceIncrement) {
-		let jsbus = maglev.maglev.MagLevJs.getInstance('englishauction');
+		let jsbus = maglev.maglev.MagLevJs.getInstance('default');
 		let args = [start, end, startingPrice, reservePrice, priceIncrement];
 		let ret = jsbus.call('EnglishAuction.Create', args);
 		return ret;
@@ -41,7 +41,7 @@ class EnglishAuction {
 	 * @return {Promise} start of auction Promise will resolve to type number.
 	*/
 	GetStart(auctionId) {
-		let jsbus = maglev.maglev.MagLevJs.getInstance('englishauction');
+		let jsbus = maglev.maglev.MagLevJs.getInstance('default');
 		let args = [auctionId];
 		let ret = jsbus.call('EnglishAuction.GetStart', args);
 		return ret;
@@ -53,7 +53,7 @@ class EnglishAuction {
 	 * @return {Promise} true if auction has ended, false otherwise Promise will resolve to type boolean.
 	*/
 	GetEnd(auctionId) {
-		let jsbus = maglev.maglev.MagLevJs.getInstance('englishauction');
+		let jsbus = maglev.maglev.MagLevJs.getInstance('default');
 		let args = [auctionId];
 		let ret = jsbus.call('EnglishAuction.GetEnd', args);
 		return ret;
@@ -65,7 +65,7 @@ class EnglishAuction {
 	 * @return {Promise} true if auction has started, false otherwise Promise will resolve to type boolean.
 	*/
 	HasStarted(auctionId) {
-		let jsbus = maglev.maglev.MagLevJs.getInstance('englishauction');
+		let jsbus = maglev.maglev.MagLevJs.getInstance('default');
 		let args = [auctionId];
 		let ret = jsbus.call('EnglishAuction.HasStarted', args);
 		return ret;
@@ -77,7 +77,7 @@ class EnglishAuction {
 	 * @return {Promise} true if auction has ended, false otherwise Promise will resolve to type boolean.
 	*/
 	HasEnded(auctionId) {
-		let jsbus = maglev.maglev.MagLevJs.getInstance('englishauction');
+		let jsbus = maglev.maglev.MagLevJs.getInstance('default');
 		let args = [auctionId];
 		let ret = jsbus.call('EnglishAuction.HasEnded', args);
 		return ret;
@@ -90,7 +90,7 @@ class EnglishAuction {
 	 * @param {number} price price bud
 	*/
 	Bid(auctionId, userId, price) {
-		let jsbus = maglev.maglev.MagLevJs.getInstance('englishauction');
+		let jsbus = maglev.maglev.MagLevJs.getInstance('default');
 		let args = [auctionId, userId, price];
 		jsbus.call('EnglishAuction.Bid', args);
 	}
@@ -101,7 +101,7 @@ class EnglishAuction {
 	 * @return {Promise}  Promise will resolve to type mixed.
 	*/
 	GetHighestBidder(auctionId) {
-		let jsbus = maglev.maglev.MagLevJs.getInstance('englishauction');
+		let jsbus = maglev.maglev.MagLevJs.getInstance('default');
 		let args = [auctionId];
 		let ret = jsbus.call('EnglishAuction.GetHighestBidder', args);
 		return ret;
@@ -114,7 +114,7 @@ class EnglishAuction {
 	 * @return {Promise} Highest bids for the specified auction Promise will resolve to type array.
 	*/
 	GetHighestBids(auctionId, numBids) {
-		let jsbus = maglev.maglev.MagLevJs.getInstance('englishauction');
+		let jsbus = maglev.maglev.MagLevJs.getInstance('default');
 		let args = [auctionId, numBids];
 		let ret = jsbus.call('EnglishAuction.GetHighestBids', args);
 		return ret;
@@ -126,7 +126,7 @@ class EnglishAuction {
 	 * @return {Promise} Number of bids placed in the specified auction Promise will resolve to type number.
 	*/
 	GetNumberOfBids(auctionId) {
-		let jsbus = maglev.maglev.MagLevJs.getInstance('englishauction');
+		let jsbus = maglev.maglev.MagLevJs.getInstance('default');
 		let args = [auctionId];
 		let ret = jsbus.call('EnglishAuction.GetNumberOfBids', args);
 		return ret;
@@ -138,7 +138,7 @@ class EnglishAuction {
 	 * @return {Promise} Price increment Promise will resolve to type number.
 	*/
 	GetPriceIncrement(auctionId) {
-		let jsbus = maglev.maglev.MagLevJs.getInstance('englishauction');
+		let jsbus = maglev.maglev.MagLevJs.getInstance('default');
 		let args = [auctionId];
 		let ret = jsbus.call('EnglishAuction.GetPriceIncrement', args);
 		return ret;
@@ -150,7 +150,7 @@ class EnglishAuction {
 	 * @return {Promise} Reserve price Promise will resolve to type number.
 	*/
 	GetReservePrice(auctionId) {
-		let jsbus = maglev.maglev.MagLevJs.getInstance('englishauction');
+		let jsbus = maglev.maglev.MagLevJs.getInstance('default');
 		let args = [auctionId];
 		let ret = jsbus.call('EnglishAuction.GetReservePrice', args);
 		return ret;
@@ -162,7 +162,7 @@ class EnglishAuction {
 	 * @return {Promise} Starting price Promise will resolve to type number.
 	*/
 	GetStartingPrice(auctionId) {
-		let jsbus = maglev.maglev.MagLevJs.getInstance('englishauction');
+		let jsbus = maglev.maglev.MagLevJs.getInstance('default');
 		let args = [auctionId];
 		let ret = jsbus.call('EnglishAuction.GetStartingPrice', args);
 		return ret;
@@ -175,7 +175,7 @@ class EnglishAuction {
 	 * @return {Promise} Time remaining in seconds Promise will resolve to type number.
 	*/
 	CalcTimeRemaining(auctionId, now) {
-		let jsbus = maglev.maglev.MagLevJs.getInstance('englishauction');
+		let jsbus = maglev.maglev.MagLevJs.getInstance('default');
 		let args = [auctionId, now];
 		let ret = jsbus.call('EnglishAuction.CalcTimeRemaining', args);
 		return ret;
@@ -187,7 +187,7 @@ class EnglishAuction {
 	 * @return {Promise} Minimum bid price Promise will resolve to type number.
 	*/
 	CalcMinimumBid(auctionId) {
-		let jsbus = maglev.maglev.MagLevJs.getInstance('englishauction');
+		let jsbus = maglev.maglev.MagLevJs.getInstance('default');
 		let args = [auctionId];
 		let ret = jsbus.call('EnglishAuction.CalcMinimumBid', args);
 		return ret;
@@ -204,7 +204,7 @@ class EnglishAuction {
 	 * @return {Promise} List of auctions ending in the specified period Promise will resolve to type array.
 	*/
 	GetAuctionsEnding(endfrom, endto, page, perpage, sort, asc) {
-		let jsbus = maglev.maglev.MagLevJs.getInstance('englishauction');
+		let jsbus = maglev.maglev.MagLevJs.getInstance('default');
 		let args = [endfrom, endto, page, perpage, sort, asc];
 		let ret = jsbus.call('EnglishAuction.GetAuctionsEnding', args);
 		return ret;
@@ -221,7 +221,7 @@ class EnglishAuction {
 	 * @return {Promise} List of auctions starting in the specified period Promise will resolve to type array.
 	*/
 	GetAuctionsStarting(startfrom, startto, page, perpage, sort, asc) {
-		let jsbus = maglev.maglev.MagLevJs.getInstance('englishauction');
+		let jsbus = maglev.maglev.MagLevJs.getInstance('default');
 		let args = [startfrom, startto, page, perpage, sort, asc];
 		let ret = jsbus.call('EnglishAuction.GetAuctionsStarting', args);
 		return ret;
@@ -236,7 +236,7 @@ class EnglishAuction {
 	 * @return {Promise} List of open auctions Promise will resolve to type array.
 	*/
 	GetOpenAuctions(page, perpage, sort, asc) {
-		let jsbus = maglev.maglev.MagLevJs.getInstance('englishauction');
+		let jsbus = maglev.maglev.MagLevJs.getInstance('default');
 		let args = [page, perpage, sort, asc];
 		let ret = jsbus.call('EnglishAuction.GetOpenAuctions', args);
 		return ret;
