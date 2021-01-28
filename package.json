@@ -1,8 +1,8 @@
 {
     "license": "CPAL-1.0",
     "name": "@mindpowered/englishauction",
-    "version": "0.0.61",
-    "description": "EnglishAuction",
+    "version": "0.0.62",
+    "description": "Online auctions with ascending price and time limit",
     "main": "index.js",
     "dependencies": {
         "@mindpowered/maglev": "*"
